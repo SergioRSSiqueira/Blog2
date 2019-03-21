@@ -13,10 +13,6 @@
                     <td><?=$postagem['titulo']?></td>
                     <td><?=anchor('postagem-visualizar/'.$postagem['id'],'Visualizar'); ?> </td>
                 </tr>
-
-              
-
-
             <?php endforeach; ?>
         </tbody>
     </table>    
