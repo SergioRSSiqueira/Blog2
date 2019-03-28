@@ -53,4 +53,6 @@ $route['default_controller'] = 'PostagemController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['postagem'] = "PostagemController";
+$route['postagem-novo'] = "PostagemController/novo";
 $route['postagem-visualizar/(:num)'] = "PostagemController/visualizar/$1";

@@ -2,14 +2,13 @@
     class PostagemController extends CI_Controller {
         
         public function index(){
-            $parametros['titulo'] = 'Postagem';
+            $parametros['titulo'] = 'Postagens';
             $parametros['postagens'] =  $this->Postagem->get();
             $this->load->view('cabecalho',$parametros);
             $this->load->view('postagem/index',$parametros);
             $this->load->view('rodape');
         }
-    
-     	public function visualizar($id){
+        public function visualizar($id){
             $parametros['titulo'] = 'Postagem';
             $parametros['postagem'] =  $this->Postagem->get($id);
             $this->load->view('cabecalho',$parametros);
@@ -17,8 +16,7 @@
             $this->load->view('rodape');
         }
         public function novo(){
-            $parametros['titulo'] = 'nova Postagem';
-            $parametros['postagem'] =  $this->Postagem->get($id);
+            $parametros['titulo'] = 'Nova Postagem';
             $this->load->view('cabecalho',$parametros);
             $this->load->view('postagem/novo');
             $this->load->view('rodape');
@@ -27,5 +25,17 @@
             $postagem = $this->input->post();
             $this->Postagem->inserir($postagem);
             redirect();
+        }
+        public function editar($id){
+            $parametros['titulo'] = 'Edição de Postagem';
+            $parametros['postagem'] =  $this->Postagem->get($id);
+            $this->load->view('cabecalho',$parametros);
+            $this->load->view('postagem/edicao',$parametros);
+            $this->load->view('rodape');
+        }
+        public function atualizar(){
+            $postagem = $this->input->post();
+            $this->Postagem->atualizar($postagem);
+            redirect();
+        }
     }
-}

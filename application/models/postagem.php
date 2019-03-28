@@ -11,4 +11,11 @@
                 return $query->result_array();
             }
         }
+        function inserir($postagem) {
+            return $this->db->insert('postagem', $postagem);
+        }
+        function atualizar($postagem) {
+            $this->db->where('id', $postagem['id']);
+            return $this->db->update('postagem', $postagem);
+        }
     }
