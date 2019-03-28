@@ -18,4 +18,8 @@
             $this->db->where('id', $postagem['id']);
             return $this->db->update('postagem', $postagem);
         }
+        function deletar($id) {
+            $this->db->where('id', $id);
+            return $this->db->delete('postagem');
+        }
     }

@@ -38,4 +38,8 @@
             $this->Postagem->atualizar($postagem);
             redirect();
         }
+        public function excluir($id){
+            $this->Postagem->deletar($id);
+            redirect();
+        }
     }
